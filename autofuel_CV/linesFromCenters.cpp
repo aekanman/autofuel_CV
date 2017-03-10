@@ -27,7 +27,7 @@ int main1(int argc, char** argv)
 
 
 	/// Read the image
-	src = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/whitedotsr.jpg", 1);
+	src = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/whitedotsr.jpg", 1);
 
 	if (!src.data)
 	{

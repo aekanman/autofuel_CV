@@ -9,7 +9,7 @@ using namespace std;
 Mat takePhotoAndMask()
 {
 	///// Load source image
-	Mat src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/yellowdotsr.jpg", IMREAD_COLOR);
+	Mat src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/yellowdotsr.jpg", IMREAD_COLOR);
 
 	//imshow("source", src1);
 	Mat mask;

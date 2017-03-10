@@ -13,8 +13,8 @@ pair<int, int> magnetTargetCoord()
 	Mat src_gray;
 
 	/// Read the image
-	//source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/4.jpg", 1);
-	source = captureImage();
+	source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/src.jpg", 1);
+	//source = captureImage();
 
 	if (!source.data)
 	{
