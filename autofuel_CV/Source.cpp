@@ -4,42 +4,57 @@
 * @author OpenCV team
 */
 
-#include "opencv2/imgcodecs.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
-#include <iostream>
+#include "cheese.h"
+#include "hough.h"
 
 using namespace cv;
 using namespace std;
 
+pair<int, int> magnetTarget;
+enum States {Idle,DetectDoor,OpenDoor,RemoveCap,InsertNozzle,RemoveNozzle};
+/**
+0:idle/polling
+1:detecting the center of the fuel door
+2:openning the fuel door
+3:removing the cap
+4:inserting the nozzle
+5:
+/
+
 /**
 * @function main
 */
-int si(int, char** argv)
+int main(int, char** argv)
 {
-	///// Load source image
+	States state = Idle;
 
-	//Mat1b src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/test2/2.jpg", IMREAD_GRAYSCALE);
-	////src1 x=[0 1280], y=[0 960]
+	//get url data
+	//check url data
+	Mat photo;
+	while (1) {
+		switch (state)
+		{
+		case Idle:
+			
+			state = DetectDoor;
+			break;
+		case DetectDoor:
+			magnetTarget = magnetTargetCoord();
+			
+			if (magnetTarget.first == -1 && magnetTarget.second == -1)
+				break;
 
-	//Moments mu = moments(src1, false);
-	//Point center;
-	////get center
-	//center.x = mu.m10 / mu.m00;
-	//center.y = mu.m01 / mu.m00;
-
-	//center.x -= 260;
-	//center.y -= 200;
-
-	//printf(" * X[%d] - Y[%d] \n", center.x, center.y);
-
-	//Mat3b res;
-	//cvtColor(src1, res, CV_GRAY2BGR);
-	//circle(res, center, 15, Scalar(0, 0, 255));
-	//imshow("Result", res);
-
-	//waitKey(0);
-	return(0);
-
-
+			state = OpenDoor;
+			break;
+		case OpenDoor:
+			photo = takePhotoAndMask();
+			state = RemoveCap;
+			break;
+		case RemoveCap:
+			
+			state = InsertNozzle;
+			break;
+		}
+		//break;
+	}
 }

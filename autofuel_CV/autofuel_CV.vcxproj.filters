@@ -24,5 +24,19 @@
     <ClCompile Include="hough.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="linesFromCenters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cheese.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cheese.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hough.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
