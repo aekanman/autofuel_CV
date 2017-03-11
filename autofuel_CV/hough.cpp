@@ -53,7 +53,7 @@ pair<int, int> magnetTargetCoord()
 			circle(source, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 			// circle target
 			targetPoints.x = center.x - radius * 0.6;
-			targetPoints.y = center.y - radius * 0.55;
+			targetPoints.y = center.y - radius * 0.3;
 			circle(source, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
 		}
 	}
@@ -139,7 +139,7 @@ Mat houghForever() {
 				circle(frame, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 				// circle target
 				targetPoints.x = center.x - radius * 0.6;
-				targetPoints.y = center.y - radius * 0.55;
+				targetPoints.y = center.y - radius * 0.3;
 				circle(frame, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
 			}
 		}
