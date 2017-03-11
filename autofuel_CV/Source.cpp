@@ -31,6 +31,7 @@ int main(int, char** argv)
 
 	Mat photo;
 	int angle = 0;
+	bool yellowDetected = 0;
 	while (1) {
 		switch (state)
 		{
@@ -43,7 +44,7 @@ int main(int, char** argv)
 			break;
 		case DetectDoor:
 			prevState = DetectDoor;
-			magnetTarget = magnetTargetCoord();
+			//magnetTarget = magnetTargetCoord();
 
 			if (magnetTarget.first == -1 && magnetTarget.second == -1)
 				break;
@@ -57,9 +58,8 @@ int main(int, char** argv)
 			break;
 		case RemoveCap:
 			prevState = RemoveCap;
-
-			//takePhotoAndMask();
-			//angle = findAngle();
+			yellowDetected = takePhotoAndMask();
+			angle = findAngle();
 			state = InsertNozzle;
 			break;
 		case InsertNozzle:

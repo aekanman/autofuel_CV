@@ -11,13 +11,12 @@ float getAngle(double x1, double x2, double y1, double y2);
 /**
 * @function main
 */
-void takePhotoAndMask()
+bool takePhotoAndMask()
 {
 	///// Load source image
 	Mat src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/realyellow1.jpg", IMREAD_COLOR);
 	//Mat src1 = captureImage();
 
-	//imshow("source", src1);
 	Mat mask;
 	//paint 
 	//cv::Scalar lowerb = cv::Scalar(0, 235, 235);
@@ -27,7 +26,11 @@ void takePhotoAndMask()
 	cv::Scalar upperb = cv::Scalar(80, 255, 255);
 	cv::inRange(src1, lowerb, upperb, mask);
 	imwrite("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSaved.jpg", mask);
-	return;
+
+	if (countNonZero(mask) < 1)
+		return 0; //return 0 if there's no yellow tape
+	
+	return 1;
 }
 
 /** @function findAngle

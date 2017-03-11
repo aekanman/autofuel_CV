@@ -7,6 +7,6 @@
 #include "opencv2/imgproc.hpp"
 #include <iostream>
 
-void takePhotoAndMask();
+bool takePhotoAndMask();
 int findAngle();
 #endif
