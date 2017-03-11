@@ -160,7 +160,6 @@
     <ClCompile Include="cheese.cpp" />
     <ClCompile Include="Contour.cpp" />
     <ClCompile Include="hough.cpp" />
-    <ClCompile Include="linesFromCenters.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
