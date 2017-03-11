@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -108,7 +108,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\serial;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,13 +158,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="appCommands.cpp" />
+    <ClCompile Include="arduinoComm.cpp" />
     <ClCompile Include="cheese.cpp" />
     <ClCompile Include="Contour.cpp" />
     <ClCompile Include="hough.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="tserial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="appCommands.h" />
+    <ClInclude Include="arduinoComm.h" />
     <ClInclude Include="cheese.h" />
     <ClInclude Include="hough.h" />
   </ItemGroup>

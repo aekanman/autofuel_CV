@@ -8,6 +8,7 @@
 #include "cheese.h"
 #include "hough.h"
 #include "appCommands.h"
+#include "arduinoComm.h"
 
 using namespace cv;
 using namespace std;
@@ -39,6 +40,7 @@ int main(int, char** argv)
 		{
 		case Idle:
 			prevState = Idle;
+			sendData();
 			appChanged = getTextFromWeb();
 			while (1) { 
 				if (appChanged != getTextFromWeb())

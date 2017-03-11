@@ -1,7 +1,37 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (test2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  tserial.cpp
   Source.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
+  hough.cpp
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\hough.cpp(55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\hough.cpp(56): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\hough.cpp(141): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\hough.cpp(142): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Contour.cpp
+  cheese.cpp
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\cheese.cpp(144): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\cheese.cpp(187): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\cheese.cpp(188): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\cheese.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Tp&,_Tp&,void,0>(_Other1,_Other2) noexcept' being compiled
+          with
+          [
+              _Tp=float,
+              _Other1=float &,
+              _Other2=float &
+          ]
+  c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\cheese.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Tp&,_Tp&,void,0>(_Other1,_Other2) noexcept' being compiled
+          with
+          [
+              _Tp=float,
+              _Other1=float &,
+              _Other2=float &
+          ]
+  arduinoComm.cpp
+c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\arduinocomm.cpp(7): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\arduinocomm.cpp(7): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\arduinocomm.cpp(7): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\arduinocomm.cpp(7): note: this argument is used as a buffer size
   appCommands.cpp
+  Generating Code...
   autofuel_CV.vcxproj -> C:\Users\Ben\Documents\Visual Studio 2015\Projects\autofuel_CV\x64\Debug\autofuel_CV.exe
   autofuel_CV.vcxproj -> C:\Users\Ben\Documents\Visual Studio 2015\Projects\autofuel_CV\x64\Debug\autofuel_CV.pdb (Full PDB)
