@@ -33,15 +33,17 @@ int main(int, char** argv)
 
 	Mat photo;
 	int angle = 0;
-	bool yellowDetected = 0;
+	bool appChanged = 0, yellowDetected = 0;
 	while (1) {
 		switch (state)
 		{
 		case Idle:
 			prevState = Idle;
-			//get url data
-			//check url data
-			//getTextFromWeb();
+			appChanged = getTextFromWeb();
+			while (1) { 
+				if (appChanged != getTextFromWeb())
+					break;
+			}
 			 
 			state = DetectDoor;
 			break;

@@ -1,3 +1,4 @@
+#define WIN32_LEAN_AND_MEAN
 #include "appCommands.h"
 
 using namespace std;
@@ -12,6 +13,7 @@ bool getTextFromWeb() {
 
 	wsprintf(path, TEXT("%s\\bool.txt"), path);
 
+	DeleteUrlCacheEntry(url);
 	HRESULT res = URLDownloadToFile(NULL, url, path, 0, NULL);
 
 	if (res == S_OK) {
@@ -33,6 +35,7 @@ bool txtFromFileToBool() {
 			appInput = toBool(line);
 		}
 		myfile.close();
+		remove("bool.txt");
 	}
 
 	else cout << "Unable to open file";

@@ -6,6 +6,8 @@
 #include <windows.h>
 #include <Urlmon.h>
 #pragma comment(lib, "urlmon.lib")
+#include <wininet.h>
+#pragma comment(lib, "Wininet.lib")
 #include <iostream>
 #include <fstream>
 #include <string>
