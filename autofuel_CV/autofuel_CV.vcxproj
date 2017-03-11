@@ -157,12 +157,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="appCommands.cpp" />
     <ClCompile Include="cheese.cpp" />
     <ClCompile Include="Contour.cpp" />
     <ClCompile Include="hough.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="appCommands.h" />
     <ClInclude Include="cheese.h" />
     <ClInclude Include="hough.h" />
   </ItemGroup>

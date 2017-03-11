@@ -27,12 +27,18 @@
     <ClCompile Include="cheese.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="appCommands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheese.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hough.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="appCommands.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

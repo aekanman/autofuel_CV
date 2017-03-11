@@ -4,8 +4,10 @@
 * @author OpenCV team
 */
 
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include "cheese.h"
 #include "hough.h"
+#include "appCommands.h"
 
 using namespace cv;
 using namespace std;
@@ -39,12 +41,13 @@ int main(int, char** argv)
 			prevState = Idle;
 			//get url data
 			//check url data
-
+			//getTextFromWeb();
+			 
 			state = DetectDoor;
 			break;
 		case DetectDoor:
 			prevState = DetectDoor;
-			//magnetTarget = magnetTargetCoord();
+			magnetTarget = magnetTargetCoord();
 
 			if (magnetTarget.first == -1 && magnetTarget.second == -1)
 				break;
@@ -53,7 +56,7 @@ int main(int, char** argv)
 			break;
 		case OpenDoor:
 			prevState = OpenDoor;
-
+			//command to initiate the magnet movement
 			state = RemoveCap;
 			break;
 		case RemoveCap:
@@ -61,6 +64,7 @@ int main(int, char** argv)
 			yellowDetected = takePhotoAndMask();
 			angle = findAngle();
 			state = InsertNozzle;
+			//command to move the gripper
 			break;
 		case InsertNozzle:
 			prevState = InsertNozzle;
