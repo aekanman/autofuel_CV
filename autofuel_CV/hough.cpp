@@ -66,11 +66,11 @@ pair<double, double> magnetTargetCoord()
 	}
 
 	/// Show your results
-	namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
-	imshow("Hough Circle Transform Demo", source);
+	//namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
+	//imshow("Hough Circle Transform Demo", source);
 
 	//return (pair<int, int>(-1,-1)); //test
-	waitKey(0);
+	//waitKey(0);
 	return pair<int, int>(distInCm.first, distInCm.second);
 }
 

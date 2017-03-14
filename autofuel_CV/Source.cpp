@@ -72,12 +72,15 @@ int main(int, char** argv)
 			prevState = RemoveCap;
 			yellowDetected = takePhotoAndMask();
 			gripperCenter = findGripperCenter();
+			if (gripperCenter.first == -1 && gripperCenter.second == -1 || !yellowDetected)
+				break;
 			angle = findAngle();
 			state = InsertNozzle;
 			//command to move the gripper
 			break;
 		case InsertNozzle:
 			prevState = InsertNozzle;
+			//send command to insert the nozzle
 
 			state = RemoveNozzle;
 			break;
@@ -87,7 +90,6 @@ int main(int, char** argv)
 			break;
 		case ErrorCase:
 			break;
-		
 		}
 	
 		//break;

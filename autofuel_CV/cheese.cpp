@@ -100,8 +100,8 @@ int findAngle()
 
 
 	/// Show your results
-	namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
-	imshow("Hough Circle Transform Demo", src);
+	//namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
+	//imshow("Hough Circle Transform Demo", src);
 
 	return angle;
 }
@@ -229,14 +229,13 @@ int findAngle()
 		/// Draw the circles detected
 		for (size_t i = 0; i < circles.size(); i++)
 		{
-			center_point.first = circles[i][0];
-			center_point.second = circles[i][1];
+			center_point.first = 0.025 * (circles[i][0] - 640);
+			center_point.second = 0.025 * (circles[i][1] - 480);
 		}
 
-
 		/// Show your results
-		namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
-		imshow("Hough Circle Transform Demo", src);
+		//namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
+		//imshow("Hough Circle Transform Demo", src);
 
 		return center_point;
 	}
