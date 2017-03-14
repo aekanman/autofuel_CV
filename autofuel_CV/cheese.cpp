@@ -14,21 +14,26 @@ float getAngle(double x1, double x2, double y1, double y2);
 bool takePhotoAndMask()
 {
 	///// Load source image
-	Mat src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/realyellow1.jpg", IMREAD_COLOR);
+	Mat src1 = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/realyellow1red.jpg", IMREAD_COLOR);
 	//Mat src1 = captureImage();
 
-	Mat mask;
+	Mat maskYellow, maskRed;
 	//paint 
 	//cv::Scalar lowerb = cv::Scalar(0, 235, 235);
 	//cv::Scalar upperb = cv::Scalar(30, 255, 255);
 	//envelope
 	cv::Scalar lowerb = cv::Scalar(0, 160, 220);
 	cv::Scalar upperb = cv::Scalar(80, 255, 255);
-	cv::inRange(src1, lowerb, upperb, mask);
-	imwrite("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSaved.jpg", mask);
+	cv::inRange(src1, lowerb, upperb, maskYellow);
+	imwrite("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSavedYellow.jpg", maskYellow);
 
-	if (countNonZero(mask) < 1)
-		return 0; //return 0 if there's no yellow tape
+	cv::Scalar lowerRed = cv::Scalar(0,0, 50);
+	cv::Scalar upperRed = cv::Scalar(20, 20, 255);
+	cv::inRange(src1,lowerRed, upperRed, maskRed);
+	imwrite("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSavedRed.jpg", maskRed);
+
+	if (countNonZero(maskYellow) < 1 || countNonZero(maskRed) < 1)
+		return 0; //return 0 if there's no yellow/red tape
 	
 	return 1;
 }
@@ -49,7 +54,7 @@ int findAngle()
 
 	//curl_easy_cleanup(curl);
 
-	Mat src = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSaved.jpg", IMREAD_COLOR);
+	Mat src = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSavedYellow.jpg", IMREAD_COLOR);
 
 	if (!src.data)
 	{
@@ -186,4 +191,52 @@ int findAngle()
 		if (!ccw)
 			return -angle;
 		return angle;
+	}
+
+	pair<double, double> findGripperCenter()
+	{
+		Mat src_gray;
+
+		//CURL* curl;
+		//CURLcode result;
+
+		//curl = curl_easy_init();
+		//curl_easy_setopt(curl, CURLOPT_URL, "www.atakanefekanman.com/bool.txt");
+
+		//result = curl_easy_perform(curl);
+
+		//curl_easy_cleanup(curl);
+
+		Mat src = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/maskedAndSavedRed.jpg", IMREAD_COLOR);
+
+		if (!src.data)
+		{
+			return (pair<int, int>(-1, -1));
+		}
+
+		/// Convert it to gray
+		cvtColor(src, src_gray, CV_BGR2GRAY);
+
+		/// Reduce the noise so we avoid false circle detection
+		GaussianBlur(src_gray, src_gray, Size(9, 9), 2, 2);
+
+		vector<Vec3f> circles;
+
+		/// Apply the Hough Transform to find the circles
+		HoughCircles(src_gray, circles, CV_HOUGH_GRADIENT, 1, src_gray.rows / 8, 200, 20, 0, 0);
+		pair<int, int> center_point;
+
+		/// Draw the circles detected
+		for (size_t i = 0; i < circles.size(); i++)
+		{
+			center_point.first = circles[i][0];
+			center_point.second = circles[i][1];
+		}
+
+
+		/// Show your results
+		namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
+		imshow("Hough Circle Transform Demo", src);
+
+		return center_point;
 	}

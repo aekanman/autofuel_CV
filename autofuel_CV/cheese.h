@@ -9,4 +9,5 @@
 
 bool takePhotoAndMask();
 int findAngle();
+pair<double, double> findGripperCenter();
 #endif

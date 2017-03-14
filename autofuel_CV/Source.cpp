@@ -14,6 +14,8 @@ using namespace cv;
 using namespace std;
 
 pair<double, double> magnetTarget;
+pair<double, double> gripperCenter;
+
 enum States {Idle,DetectDoor,OpenDoor,RemoveCap,InsertNozzle,RemoveNozzle, ErrorCase};
 /**
 0:idle/polling
@@ -51,7 +53,7 @@ int main(int, char** argv)
 			break;
 		case DetectDoor:
 			prevState = DetectDoor;
-			magnetTarget = magnetTargetCoord();
+			//magnetTarget = magnetTargetCoord();
 
 			if (magnetTarget.first == -1 && magnetTarget.second == -1)
 				break;
@@ -61,14 +63,15 @@ int main(int, char** argv)
 		case OpenDoor:
 			prevState = OpenDoor;
 			//command to initiate the magnet movement
-			initArduinoComm();
-			sendData(magnetTarget);
+			//initArduinoComm();
+			//sendData(magnetTarget);
 
 			state = RemoveCap;
 			break;
 		case RemoveCap:
 			prevState = RemoveCap;
 			yellowDetected = takePhotoAndMask();
+			gripperCenter = findGripperCenter();
 			angle = findAngle();
 			state = InsertNozzle;
 			//command to move the gripper
