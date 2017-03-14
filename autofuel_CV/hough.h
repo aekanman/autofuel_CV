@@ -8,7 +8,7 @@
 #include "opencv2/imgproc.hpp"
 #include <iostream>
 
-std::pair<int, int> magnetTargetCoord();
+std::pair<double, double> magnetTargetCoord();
 cv::Mat captureImage();
 
 #endif

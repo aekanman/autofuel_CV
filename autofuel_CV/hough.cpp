@@ -5,17 +5,18 @@ using namespace cv;
 using namespace std;
 Mat source;
 vector<pair<int, int>> magnetTarget;
+pair<double, double> distInCm;
 
 Mat houghForever();
 
 /** @function main */
-pair<int, int> magnetTargetCoord()
+pair<double, double> magnetTargetCoord()
 {
 	Mat src_gray;
 
 	/// Read the image
-	//source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/src.jpg", 1);
-	source = houghForever();
+	source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/src.jpg", 1);
+	//source = houghForever();
 
 	if (!source.data)
 	{
@@ -52,9 +53,15 @@ pair<int, int> magnetTargetCoord()
 			// circle outline
 			circle(source, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 			// circle target
-			targetPoints.x = center.x - radius * 0.6;
-			targetPoints.y = center.y - radius * 0.3;
+			targetPoints.x = center.x - radius * 0.6;//center 552, target 352
+			targetPoints.y = center.y - radius * 0.3;//center 488, target 388
 			circle(source, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
+
+			//center of the frame 640,480
+			//distance from center: targetx - 640 , targety-480
+			//distance in cm: 0.025cm*(targetx - 640) , 0.025cm*(targety - 480)
+			distInCm.first = 0.025 * (targetPoints.x - 640);
+			distInCm.second = 0.025 * (targetPoints.y - 480);
 		}
 	}
 
@@ -64,7 +71,7 @@ pair<int, int> magnetTargetCoord()
 
 	//return (pair<int, int>(-1,-1)); //test
 	waitKey(0);
-	return (pair<int, int>(targetPoints.x, targetPoints.y));
+	return pair<int, int>(distInCm.first, distInCm.second);
 }
 
 Mat captureImage() {

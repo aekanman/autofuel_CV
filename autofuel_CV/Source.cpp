@@ -13,7 +13,7 @@
 using namespace cv;
 using namespace std;
 
-pair<int, int> magnetTarget;
+pair<double, double> magnetTarget;
 enum States {Idle,DetectDoor,OpenDoor,RemoveCap,InsertNozzle,RemoveNozzle, ErrorCase};
 /**
 0:idle/polling
@@ -40,12 +40,12 @@ int main(int, char** argv)
 		{
 		case Idle:
 			prevState = Idle;
-			sendData();
-			appChanged = getTextFromWeb();
+			//sendData();
+			/*appChanged = getTextFromWeb();
 			while (1) { 
 				if (appChanged != getTextFromWeb())
 					break;
-			}
+			}*/
 			 
 			state = DetectDoor;
 			break;
@@ -61,6 +61,9 @@ int main(int, char** argv)
 		case OpenDoor:
 			prevState = OpenDoor;
 			//command to initiate the magnet movement
+			initArduinoComm();
+			sendData(magnetTarget);
+
 			state = RemoveCap;
 			break;
 		case RemoveCap:
