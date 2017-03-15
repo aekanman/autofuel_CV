@@ -55,7 +55,7 @@ pair<double, double> magnetTargetCoord()
 			circle(source, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 			// circle target
 			targetPoints.x = center.x - radius * 0.6;//center 552, target 352
-			targetPoints.y = center.y - radius * 0.3;//center 488, target 388
+			targetPoints.y = center.y + radius * 0.5;//center 488, target 388
 			circle(source, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
 
 			//center of the frame 640,480
@@ -66,11 +66,10 @@ pair<double, double> magnetTargetCoord()
 		}
 	}
 
-	/// Show your results
+	/// Show results
 	//namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
 	//imshow("Hough Circle Transform Demo", source);
 
-	//return (pair<int, int>(-1,-1)); //test
 	//waitKey(0);
 	return pair<int, int>(distInCm.first, distInCm.second);
 }

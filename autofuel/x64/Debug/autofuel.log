@@ -1,15 +1,10 @@
-﻿  stdafx.cpp
-  tserial.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\tserial.cpp(34): warning C4603: 'STRICT': macro is not defined or definition is different after precompiled header use
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\tserial.cpp(34): note: Add macro to precompiled header instead of defining here
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\tserial.cpp(42): note: use of precompiled header
-  hough.cpp
+﻿  hough.cpp
 c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(57): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(58): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(148): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(149): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(150): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(75): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
+  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
               _Ty1=double,
@@ -17,7 +12,7 @@ c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): war
               _Other1=double &,
               _Other2=double &
           ]
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(75): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
+  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
               _Ty1=double,
@@ -25,33 +20,5 @@ c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): war
               _Other1=double &,
               _Other2=double &
           ]
-  cheese.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(193): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(194): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(233): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(234): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(80): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Tp&,_Tp&,void,0>(_Other1,_Other2) noexcept' being compiled
-          with
-          [
-              _Tp=float,
-              _Other1=float &,
-              _Other2=float &
-          ]
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\cheese.cpp(80): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Tp&,_Tp&,void,0>(_Other1,_Other2) noexcept' being compiled
-          with
-          [
-              _Tp=float,
-              _Other1=float &,
-              _Other2=float &
-          ]
-  autofuel.cpp
-  arduinoComm.cpp
-  appCommands.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\appcommands.cpp(1): warning C4603: 'WIN32_LEAN_AND_MEAN': macro is not defined or definition is different after precompiled header use
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\appcommands.cpp(1): note: Add macro to precompiled header instead of defining here
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\appcommands.cpp(3): note: use of precompiled header
-  Generating Code...
   autofuel.vcxproj -> C:\Users\Ben\documents\visual studio 2015\Projects\autofuel\x64\Debug\autofuel.exe
   autofuel.vcxproj -> C:\Users\Ben\documents\visual studio 2015\Projects\autofuel\x64\Debug\autofuel.pdb (Full PDB)
