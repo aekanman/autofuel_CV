@@ -1,9 +1,0 @@
-﻿  Source.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\source.cpp(7): fatal error C1083: Cannot open include file: 'opencv2/imgcodecs.hpp': No such file or directory
-  linesFromCenters.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\linesfromcenters.cpp(1): fatal error C1083: Cannot open include file: 'opencv2/highgui/highgui.hpp': No such file or directory
-  hough.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\hough.cpp(1): fatal error C1083: Cannot open include file: 'opencv2/highgui/highgui.hpp': No such file or directory
-  Contour.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel_cv\autofuel_cv\contour.cpp(7): fatal error C1083: Cannot open include file: 'opencv2/imgcodecs.hpp': No such file or directory
-  Generating Code...
