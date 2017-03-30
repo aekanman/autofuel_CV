@@ -1,24 +1,24 @@
 ﻿  hough.cpp
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(57): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(58): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(148): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(149): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(59): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(150): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(151): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(172): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
+  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(76): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty2&,_Ty1&,void,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
-              _Ty1=double,
               _Ty2=double,
+              _Ty1=double,
               _Other1=double &,
               _Other2=double &
           ]
-  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(74): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty1&,_Ty2&,void,0>(_Other1,_Other2) noexcept' being compiled
+  c:\users\ben\documents\visual studio 2015\projects\autofuel\autofuel\hough.cpp(76): note: see reference to function template instantiation 'std::pair<int,int>::pair<_Ty2&,_Ty1&,void,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
-              _Ty1=double,
               _Ty2=double,
+              _Ty1=double,
               _Other1=double &,
               _Other2=double &
           ]
-  autofuel.vcxproj -> C:\Users\Ben\documents\visual studio 2015\Projects\autofuel\x64\Debug\autofuel.exe
-  autofuel.vcxproj -> C:\Users\Ben\documents\visual studio 2015\Projects\autofuel\x64\Debug\autofuel.pdb (Full PDB)
+  autofuel.vcxproj -> C:\Users\Ben\Documents\Visual Studio 2015\Projects\autofuel\x64\Debug\autofuel.exe
+  autofuel.vcxproj -> C:\Users\Ben\Documents\Visual Studio 2015\Projects\autofuel\x64\Debug\autofuel.pdb (Full PDB)

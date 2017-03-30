@@ -1,3 +1,5 @@
+// Project Autofuel's Computer Vision Software
+// Author: Atakan Efe Kanman
 
 #include "hough.h"
 #include "stdafx.h"
@@ -6,7 +8,7 @@ using namespace cv;
 using namespace std;
 Mat source;
 vector<pair<int, int>> magnetTarget;
-pair<double, double> distInCm;
+pair<double, double> distInMm;
 
 Mat houghForever();
 
@@ -16,7 +18,8 @@ pair<double, double> magnetTargetCoord()
 	Mat src_gray;
 
 	/// Read the image
-	source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel_CV/img/src.jpg", 1);
+	//source = captureImage();
+	source = imread("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel/img/door.jpg", 1);
 	//source = houghForever();
 
 	if (!source.data)
@@ -54,24 +57,25 @@ pair<double, double> magnetTargetCoord()
 			// circle outline
 			circle(source, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 			// circle target
-			targetPoints.x = center.x - radius * 0.6;//center 552, target 352
-			targetPoints.y = center.y + radius * 0.5;//center 488, target 388
+			targetPoints.x = center.x - radius * 0.5;//center 552, target 352
+			targetPoints.y = center.y + radius * 0.6;//center 488, target 388
 			circle(source, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
 
 			//center of the frame 640,480
 			//distance from center: targetx - 640 , targety-480
 			//distance in cm: 0.025cm*(targetx - 640) , 0.025cm*(targety - 480)
-			distInCm.first = 0.025 * (targetPoints.x - 640);
-			distInCm.second = 0.025 * (targetPoints.y - 480);
+			distInMm.first = 0.1718 * (targetPoints.x - 640);
+			distInMm.second = 0.1718 * (targetPoints.y - 480);
 		}
 	}
 
 	/// Show results
-	//namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
-	//imshow("Hough Circle Transform Demo", source);
+	namedWindow("Hough Circle Transform Demo", CV_WINDOW_AUTOSIZE);
+	imshow("Hough Circle Transform Demo", source);
+	imwrite("C:/Users/Ben/Documents/Visual Studio 2015/Projects/autofuel/img/SSdoor.jpg", source);
+	waitKey(0);
 
-	//waitKey(0);
-	return pair<int, int>(distInCm.first, distInCm.second);
+	return pair<int, int>(distInMm.second, distInMm.first);
 }
 
 Mat captureImage() {
@@ -145,7 +149,7 @@ Mat houghForever() {
 				// circle outline
 				circle(frame, center, radius, Scalar(0, 0, 255), 3, 8, 0);
 				// circle target
-				targetPoints.x = center.x - radius * 0.6;
+				targetPoints.x = center.x - radius * 0.2;
 				targetPoints.y = center.y - radius * 0.3;
 				circle(frame, targetPoints, 20, Scalar(0, 215, 255), 3, 8, 0);
 			}

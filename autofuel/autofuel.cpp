@@ -1,3 +1,5 @@
+// Project Autofuel's Computer Vision Software
+// Author: Atakan Efe Kanman
 // autofuel.cpp : Defines the entry point for the console application.
 //
 
@@ -16,7 +18,7 @@ enum States { Idle, DetectDoor, OpenDoor, RemoveCap, InsertNozzle, RemoveNozzle,
 2:openning the fuel door
 3:removing the cap
 4:inserting the nozzle
-5:
+5:removing the nozzle and everything else
 /**/
 
 int main()
@@ -32,16 +34,17 @@ int main()
 		{
 		case Idle:
 			prevState = Idle;
-			//sendData();
-			/*appChanged = getTextFromWeb();
+			
+			appChanged = getTextFromWeb();
 			while (1) {
 			if (appChanged != getTextFromWeb())
-			break;
-			}*/
+				break;
+			}
 
 			state = DetectDoor;
 			break;
 		case DetectDoor:
+			initArduinoComm();
 			prevState = DetectDoor;
 			magnetTarget = magnetTargetCoord();
 
@@ -52,9 +55,9 @@ int main()
 			break;
 		case OpenDoor:
 			prevState = OpenDoor;
-			//command to initiate the magnet movement
+			command to initiate the magnet movement
 			initArduinoComm();
-			//sendData(magnetTarget);
+			sendData(magnetTarget);
 
 			state = RemoveCap;
 			break;
@@ -62,9 +65,10 @@ int main()
 			prevState = RemoveCap;
 			yellowDetected = takePhotoAndMask();
 			gripperCenter = findGripperCenter();
-			if (gripperCenter.first == -1 && gripperCenter.second == -1 || !yellowDetected)
-				break;
-			angle = findAngle();
+			//if (gripperCenter.first == -1 && gripperCenter.second == -1 || !yellowDetected)
+				//break;
+			//angle = findAngle();
+			//sendData(pair<int, int>(50, 50));
 			state = InsertNozzle;
 			//command to move the gripper
 			break;

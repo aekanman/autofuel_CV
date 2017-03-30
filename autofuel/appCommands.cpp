@@ -1,3 +1,6 @@
+// Project Autofuel's Computer Vision Software
+// Author: Atakan Efe Kanman
+
 #define WIN32_LEAN_AND_MEAN
 #include "appCommands.h"
 #include "stdafx.h"

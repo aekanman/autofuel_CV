@@ -1,3 +1,6 @@
+// Project Autofuel's Computer Vision Software
+// Author: Atakan Efe Kanman
+
 #include"arduinoComm.h"
 #include <cmath>
 #include "stdafx.h"
@@ -20,7 +23,7 @@ enum CommandSet //enum that will be used to get proper
 
 void sendData(std::pair<int, int> target) {
 	char buffer[10]; //= new char[10];
-	int size = GeneratePositionMessage(2, -2, -1, buffer);
+	int size = GeneratePositionMessage(target.first, 0, target.second, buffer);
 	comm.send_array(buffer, size); //The data is sent through the port
 }
 
