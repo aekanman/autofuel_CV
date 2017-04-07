@@ -55,7 +55,7 @@ int main()
 			break;
 		case OpenDoor:
 			prevState = OpenDoor;
-			command to initiate the magnet movement
+			//command to initiate the magnet movement
 			initArduinoComm();
 			sendData(magnetTarget);
 
@@ -65,10 +65,10 @@ int main()
 			prevState = RemoveCap;
 			yellowDetected = takePhotoAndMask();
 			gripperCenter = findGripperCenter();
-			//if (gripperCenter.first == -1 && gripperCenter.second == -1 || !yellowDetected)
-				//break;
-			//angle = findAngle();
-			//sendData(pair<int, int>(50, 50));
+			if (gripperCenter.first == -1 && gripperCenter.second == -1 || !yellowDetected)
+				break;
+			angle = findAngle();
+			sendData(angle, 0);
 			state = InsertNozzle;
 			//command to move the gripper
 			break;
@@ -85,8 +85,6 @@ int main()
 		case ErrorCase:
 			break;
 		}
-
-		//break;
 	}
 }
 
