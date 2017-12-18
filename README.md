@@ -17,4 +17,8 @@ Autofuel, a fully automated refuelling system
 ![Alt text](/img/door-detection.png "Door Detection")<br />
 
 ### Cap Detection <br />
-![Alt text](/img/cap-detection.png "Cap Detection")<br />
+![Alt text](/img/cap-detection.png "Cap Detection")<br /><br /><br />
+
+
+## License
+MIT © [Atakan Efe Kanman](https://atakanefekanman.com)
