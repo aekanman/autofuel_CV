@@ -21,4 +21,4 @@ Autofuel, a fully automated refuelling system
 
 
 ## License
-MIT © [Atakan Efe Kanman](https://atakanefekanman.com)
+MIT © [Atakan Efe Kanman](http://atakanefekanman.com)
